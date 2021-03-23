@@ -23,9 +23,9 @@ PENTA_MP3 = 'woohoo.mp3'  # audio file to be played when ^^ is located
 while True:
     print("Executed.")
     time.sleep(1)
-    screen = pag.screenshot("currScreen.png")
-    penta_img = pag.locateOnScreen(PENTA_REF, confidence=0.5)  #PIL image, None if not found
+    screen = pag.screenshot("images/currScreen.png")
+    penta_img = pag.locateOnScreen('images/' + PENTA_REF, confidence=0.5)  # PIL image, None if not found
     if(penta_img):
         playsound.playsound(PENTA_MP3)
     else:
-        print('Not good enough')
+        print('Better luck next time, gamer.')
