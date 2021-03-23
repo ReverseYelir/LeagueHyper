@@ -20,12 +20,15 @@ import playsound, time
 PENTA_REF = 'pentakill.png'  # Image file to be located
 PENTA_MP3 = 'woohoo.mp3'  # audio file to be played when ^^ is located
 
-while True:
-    print("Executed.")
-    time.sleep(1)
-    screen = pag.screenshot("images/currScreen.png")
-    penta_img = pag.locateOnScreen('images/' + PENTA_REF, confidence=0.5)  # PIL image, None if not found
-    if(penta_img):
-        playsound.playsound(PENTA_MP3)
-    else:
-        print('Better luck next time, gamer.')
+def main():
+    while True:
+        print("Executed.")
+        time.sleep(1)
+        screen = pag.screenshot("images/currScreen.png")
+        penta_img = pag.locateOnScreen('images/' + PENTA_REF, confidence=0.5)  # PIL image, None if not found
+        if (penta_img):
+            playsound.playsound(PENTA_MP3)
+        else:
+            print('Better luck next time, gamer.')
+
+main()
